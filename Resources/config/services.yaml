@@ -10,7 +10,7 @@ services:
         tags:
             - { name: kernel.event_listener, event: kernel.response }
 
-    Ofeige\Rfc1Bundle\Describer\AnnotationDescriber:
+    Ofeige\ApiBundle\Describer\AnnotationDescriber:
         autowire: true
         public: false
         arguments:

@@ -15,13 +15,7 @@ use Ofeige\ApiBundle\Annotation AS Api;
 /**
  * Class AnnotationDescriber
  *
- * Auto generate 200-responses by the annotated dtoMapper.
- *
- * The following conditions must match:
- * * No Response(200) annotation given
- * * Rfc1\View annotation with dtoMapper given
- * * Corresponding dtoMapper has a return typehint
- * * Controller action has a return-annotation, which states the return of an array or not (f.e. * @ return Foobar[])
+ * Auto generates deprecation notices to the documentation
  *
  * @package Ofeige\Rfc11Bundle\Describer
  */
@@ -76,8 +70,15 @@ class AnnotationDescriber implements DescriberInterface, ModelRegistryAwareInter
                                 continue;
                             }
 
+                            $deprecatedString = '!!! DEPRECATED !!! ';
+                            $removedString = 'REMOVED AT ' . $annotation->getUntil()->format('Y-m-d') . ' OR LATER !!! ';
+
+                            if (substr($operation->getSummary(), 0, strlen($deprecatedString)) === $deprecatedString) {
+                                continue;
+                            }
+
                             /** @noinspection PhpToStringImplementationInspection */
-                            $operation->setDescription('!!! DEPRECATED !!! ' . $operation->getSummary());
+                            $operation->setSummary($deprecatedString . $removedString . $operation->getSummary());
                         }
                     }
                 }
