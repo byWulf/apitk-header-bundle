@@ -1,0 +1,11 @@
+services:
+
+    Ofeige\ApiBundle\Service\HeaderInformation:
+        autowire: true
+        public: true
+
+    Ofeige\ApiBundle\EventListener\HeaderResponseListener:
+        autowire: true
+        public: false
+        tags:
+            - { name: kernel.event_listener, event: kernel.response }
