@@ -4,6 +4,11 @@ services:
         autowire: true
         public: true
 
+    Ofeige\ApiBundle\EventListener\DeprecationListener:
+        autowire: true
+        tags:
+            - {name: kernel.event_listener, event: kernel.controller}
+
     Ofeige\ApiBundle\EventListener\HeaderResponseListener:
         autowire: true
         public: false
