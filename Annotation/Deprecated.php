@@ -28,7 +28,7 @@ class Deprecated
                 throw new AnnotationException('Until option is missing or invalid. Use date format Y-m-d.');
             }
 
-            $this->until = new \DateTime($date);
+            $this->until = $date;
         }
     }
 
