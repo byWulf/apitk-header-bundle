@@ -4,6 +4,7 @@ namespace Ofeige\ApiBundle\Describer;
 
 use Doctrine\Common\Annotations\Reader;
 use EXSyst\Component\Swagger\Operation;
+use EXSyst\Component\Swagger\Path;
 use EXSyst\Component\Swagger\Swagger;
 use Nelmio\ApiDocBundle\Describer\DescriberInterface;
 use Nelmio\ApiDocBundle\Describer\ModelRegistryAwareInterface;
@@ -58,6 +59,7 @@ class AnnotationDescriber implements DescriberInterface, ModelRegistryAwareInter
     public function describe(Swagger $api)
     {
         $paths = $api->getPaths();
+        /** @var Path $path */
         foreach ($paths as $uri => $path) {
             foreach ($path->getMethods() as $method) {
                 /** @var Operation $operation */
@@ -70,15 +72,19 @@ class AnnotationDescriber implements DescriberInterface, ModelRegistryAwareInter
                                 continue;
                             }
 
-                            $deprecatedString = '!!! DEPRECATED !!! ';
-                            $removedString = 'REMOVED AT ' . $annotation->getUntil()->format('Y-m-d') . ' OR LATER !!! ';
+                            if ($annotation->isHiddenInDoc()) {
+                                $path->removeOperation($method);
+                            }
 
-                            if (substr($operation->getSummary(), 0, strlen($deprecatedString)) === $deprecatedString) {
-                                continue;
+                            $deprecatedString = '!!! DEPRECATED !!! ';
+
+                            $removedString = '';
+                            if ($annotation->getUntil()) {
+                                $removedString = 'REMOVED AT ' . $annotation->getUntil()->format('Y-m-d') . ' OR LATER !!! ';
                             }
 
                             /** @noinspection PhpToStringImplementationInspection */
-                            $operation->setSummary($deprecatedString . $removedString . $operation->getSummary());
+                            $operation->setSummary($deprecatedString . $removedString);
                         }
                     }
                 }

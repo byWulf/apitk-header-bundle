@@ -13,9 +13,14 @@ use Doctrine\Common\Annotations\AnnotationException;
 class Deprecated
 {
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      */
-    private $until;
+    private $until = null;
+
+    /**
+     * @var bool
+     */
+    private $hideInDoc = false;
 
     /**
      * @param null|array $options
@@ -24,19 +29,21 @@ class Deprecated
     public function __construct($options = null)
     {
         if (is_array($options)) {
-            if (!isset($options['until']) || !($date = new \DateTime($options['until']))) {
-                throw new AnnotationException('Until option is missing or invalid. Use date format Y-m-d.');
-            }
-
-            $this->until = $date;
+            $this->until = isset($options['until']) ? new \DateTime($options['until']) : null;
+            $this->hideInDoc = $options['hideInDoc'] ?? false;
         }
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTime|null
      */
-    public function getUntil(): \DateTime
+    public function getUntil(): ?\DateTime
     {
         return $this->until;
+    }
+
+    public function isHiddenInDoc(): bool
+    {
+        return $this->hideInDoc;
     }
 }
