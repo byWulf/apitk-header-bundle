@@ -50,6 +50,6 @@ You can mark actions as deprecated so developers can notice that they have to up
  * @return User[]
  */
  ```
- A notice is displayed inside the swagger documentation and a new response header `x-api-deprecated-removed-at: 2018-10-09` will be sent to the client.
+ A notice is displayed inside the swagger documentation and a new response header `x-api-deprecated: deprecated` and `x-api-deprecated-removed-at: 2018-10-09` (if a date was set) will be sent to the client.
 
 If you want to hide a certain endpoint from the docs, use the `hideFromDocs=true` parameter in the `Deprecated` annotation. The corresponding action then will not be shown.
