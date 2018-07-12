@@ -79,8 +79,8 @@ class AnnotationDescriber implements DescriberInterface, ModelRegistryAwareInter
                             $deprecatedString = '!!! DEPRECATED !!! ';
 
                             $removedString = '';
-                            if ($annotation->getUntil()) {
-                                $removedString = 'REMOVED AT ' . $annotation->getUntil()->format('Y-m-d') . ' OR LATER !!! ';
+                            if ($annotation->getRemovedAfter()) {
+                                $removedString = 'REMOVED AT ' . $annotation->getRemovedAfter()->format('Y-m-d') . ' OR LATER !!! ';
                             }
 
                             /** @noinspection PhpToStringImplementationInspection */

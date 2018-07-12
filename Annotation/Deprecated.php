@@ -15,7 +15,7 @@ class Deprecated
     /**
      * @var \DateTime|null
      */
-    private $until = null;
+    private $removedAfter = null;
 
     /**
      * @var bool
@@ -29,7 +29,7 @@ class Deprecated
     public function __construct($options = null)
     {
         if (is_array($options)) {
-            $this->until = isset($options['until']) ? new \DateTime($options['until']) : null;
+            $this->removedAfter = isset($options['removedAfter']) ? new \DateTime($options['removedAfter']) : null;
             $this->hideInDoc = $options['hideInDoc'] ?? false;
         }
     }
@@ -37,9 +37,9 @@ class Deprecated
     /**
      * @return \DateTime|null
      */
-    public function getUntil(): ?\DateTime
+    public function getRemovedAfter(): ?\DateTime
     {
-        return $this->until;
+        return $this->removedAfter;
     }
 
     public function isHiddenInDoc(): bool

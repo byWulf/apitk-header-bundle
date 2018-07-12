@@ -58,8 +58,8 @@ class DeprecationListener
         }
 
         $this->headerInformation->add('deprecated', 'deprecated');
-        if ($annotation->getUntil()) {
-            $this->headerInformation->add('deprecated-removed-at', $annotation->getUntil()->format('Y-m-d'));
+        if ($annotation->getRemovedAfter()) {
+            $this->headerInformation->add('deprecated-removed-at', $annotation->getRemovedAfter()->format('Y-m-d'));
         }
     }
 

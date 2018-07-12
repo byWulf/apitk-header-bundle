@@ -44,7 +44,7 @@ You can mark actions as deprecated so developers can notice that they have to up
  * @Rest\Get("/v2/users")
  * @Rest\View()
  *
- * @Api\Deprecated(until="2018-10-09")
+ * @Api\Deprecated(removedAfter="2018-10-09")
  
  * @param User[] $users
  * @return User[]
