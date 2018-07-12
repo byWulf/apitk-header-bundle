@@ -4,22 +4,8 @@ services:
         autowire: true
         public: true
 
-    Ofeige\ApiBundle\EventListener\DeprecationListener:
-        autowire: true
-        tags:
-            - {name: kernel.event_listener, event: kernel.controller}
-
     Ofeige\ApiBundle\EventListener\HeaderResponseListener:
         autowire: true
         public: false
         tags:
             - { name: kernel.event_listener, event: kernel.response }
-
-    Ofeige\ApiBundle\Describer\AnnotationDescriber:
-        autowire: true
-        public: false
-        arguments:
-            - '@nelmio_api_doc.routes.default'
-            - '@nelmio_api_doc.controller_reflector'
-        tags:
-            - {name: 'nelmio_api_doc.route_describer', priority: -2000 }
