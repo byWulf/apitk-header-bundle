@@ -1,6 +1,6 @@
 {
-  "name": "ofeige/api-bundle",
-  "version": "0.1.0",
+  "name": "shopping/api-helper-bundle",
+  "version": "0.9.0",
   "type": "symfony-bundle",
   "description": "This bundle provides helpful api helpers for RESTful API's",
   "authors": [
@@ -11,7 +11,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Ofeige\\ApiBundle\\": ""
+      "Shopping\\ApiHelperBundle\\": ""
     },
     "exclude-from-classmap": [
       "Tests/"

@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Ofeige\ApiBundle\Service;
+namespace Shopping\ApiHelperBundle\Service;
 
 /**
  * Class HeaderInformation
  *
- * @package Ofeige\ApiBundle\Service
+ * @package Shopping\ApiHelperBundle\Service
  */
 class HeaderInformation
 {

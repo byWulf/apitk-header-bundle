@@ -17,7 +17,7 @@ Add this repository to your `composer.json` until it is available at packagist:
 
 After that, install the package via composer:
 ```
-composer install ofeige/api-bundle:dev-master
+composer install shopping/api-helper-bundle:dev-master
 ```
 
 ## Usage

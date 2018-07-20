@@ -1,8 +1,8 @@
 <?php
 
-namespace Ofeige\ApiBundle\EventListener;
+namespace Shopping\ApiHelperBundle\EventListener;
 
-use Ofeige\ApiBundle\Service\HeaderInformation;
+use Shopping\ApiHelperBundle\Service\HeaderInformation;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 /**
@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
  *
  * Adds the added header values (through HeaderInformation) to the response (f.e. the x-api-rfc14-pagination-total header).
  *
- * @package Ofeige\ApiBundle\EventListener
+ * @package Shopping\ApiHelperBundle\EventListener
  */
 class HeaderResponseListener
 {

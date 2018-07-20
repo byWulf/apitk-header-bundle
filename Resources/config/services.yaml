@@ -1,10 +1,10 @@
 services:
 
-    Ofeige\ApiBundle\Service\HeaderInformation:
+    Shopping\ApiHelperBundle\Service\HeaderInformation:
         autowire: true
         public: true
 
-    Ofeige\ApiBundle\EventListener\HeaderResponseListener:
+    Shopping\ApiHelperBundle\EventListener\HeaderResponseListener:
         autowire: true
         public: false
         tags:
