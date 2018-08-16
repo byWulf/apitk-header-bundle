@@ -1,8 +1,8 @@
 <?php
 
-namespace Shopping\ApiHelperBundle\EventListener;
+namespace Shopping\ApiTKHeaderBundle\EventListener;
 
-use Shopping\ApiHelperBundle\Service\HeaderInformation;
+use Shopping\ApiTKHeaderBundle\Service\HeaderInformation;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 /**
@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
  *
  * Adds the added header values (through HeaderInformation) to the response (f.e. the x-api-rfc14-pagination-total header).
  *
- * @package Shopping\ApiHelperBundle\EventListener
+ * @package Shopping\ApiTKHeaderBundle\EventListener
  */
 class HeaderResponseListener
 {
@@ -34,7 +34,7 @@ class HeaderResponseListener
     public function onKernelResponse(FilterResponseEvent $event)
     {
         foreach ($this->headerInformation->getAll() as $key => $value) {
-            $event->getResponse()->headers->set('x-api-' . $key, $value);
+            $event->getResponse()->headers->set('x-apitk-' . $key, $value);
         }
     }
 }

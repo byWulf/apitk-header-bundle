@@ -1,10 +1,10 @@
 services:
 
-    Shopping\ApiHelperBundle\Service\HeaderInformation:
+    Shopping\ApiTKHeaderBundle\Service\HeaderInformation:
         autowire: true
         public: true
 
-    Shopping\ApiHelperBundle\EventListener\HeaderResponseListener:
+    Shopping\ApiTKHeaderBundle\EventListener\HeaderResponseListener:
         autowire: true
         public: false
         tags:
