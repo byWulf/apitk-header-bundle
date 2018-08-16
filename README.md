@@ -1,4 +1,4 @@
-# api-bundle
+# apitk-header-bundle
 
 ## Overview
 This bundle provides useful features for a symfony based RESTful API.
@@ -9,7 +9,7 @@ Add this repository to your `composer.json` until it is available at packagist:
 {
     "repositories": [{
             "type": "vcs",
-            "url": "git@github.com:CHECK24/api-bundle.git"
+            "url": "git@github.com:CHECK24/apitk-header-bundle.git"
         }
     ]
 }
@@ -17,12 +17,14 @@ Add this repository to your `composer.json` until it is available at packagist:
 
 After that, install the package via composer:
 ```
-composer install shopping/api-helper-bundle:dev-master
+composer install shopping/apitk-header-bundle:dev-master
 ```
 
 ## Usage
 ### Header information
-You can easily add information to the response headers by using the `HeaderInformation` service. These information will automatically be added to the response and prefixed with `x-api-`
+You can easily add information to the response headers by using the `HeaderInformation` service.
+These information will automatically be added to the response and prefixed with `x-apitk-`
+
 ```
 public function index(HeaderInformation $headerInformation): array
 {
@@ -33,23 +35,10 @@ public function index(HeaderInformation $headerInformation): array
     return $users;
 }
 ```
-will result in a response header `x-api-users-count: 15`.
+will result in a response header `x-apitk-users-count: 15`.
 
-### Deprecations
-You can mark actions as deprecated so developers can notice that they have to update their API call to a newer version or to use a whole other endpoint.
-```
-/**
- * Returns the users in the system.
- *
- * @Rest\Get("/v2/users")
- * @Rest\View()
- *
- * @Api\Deprecated(removedAfter="2018-10-09")
- 
- * @param User[] $users
- * @return User[]
- */
- ```
- A notice is displayed inside the swagger documentation and a new response header `x-api-deprecated: deprecated` and `x-api-deprecated-removed-at: 2018-10-09` (if a date was set) will be sent to the client.
+### Deprecations (apitk-deprecation-bundle)
+You can mark actions as deprecated so developers can notice that they have to update their API
+call to a newer version or to use a whole other endpoint.
 
-If you want to hide a certain endpoint from the docs, use the `hideFromDocs=true` parameter in the `Deprecated` annotation. The corresponding action then will not be shown.
+[see CHECK24/apitk-deprecation-bundle](https://github.com/CHECK24/apitk-deprecation-bundle)

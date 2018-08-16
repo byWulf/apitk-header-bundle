@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Shopping\ApiHelperBundle\Service;
+namespace Shopping\ApiTKHeaderBundle\Service;
 
 /**
  * Class HeaderInformation
  *
- * @package Shopping\ApiHelperBundle\Service
+ * @package Shopping\ApiTKHeaderBundle\Service
  */
 class HeaderInformation
 {
