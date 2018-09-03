@@ -1,6 +1,6 @@
 {
-  "name": "shopping/apitk-header-bundle",
-  "version": "1.0.0",
+  "name": "check24/apitk-header-bundle",
+  "version": "1.0.1",
   "type": "symfony-bundle",
   "description": "This bundle provides helpful api helpers for RESTful API's",
   "authors": [
