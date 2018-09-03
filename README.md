@@ -4,20 +4,9 @@
 This bundle provides useful features for a symfony based RESTful API.
 
 ## Installation
-Add this repository to your `composer.json` until it is available at packagist:
+Install the package via composer:
 ```
-{
-    "repositories": [{
-            "type": "vcs",
-            "url": "git@github.com:CHECK24/apitk-header-bundle.git"
-        }
-    ]
-}
-```
-
-After that, install the package via composer:
-```
-composer install shopping/apitk-header-bundle:dev-master
+composer install check24/apitk-header-bundle
 ```
 
 ## Usage
