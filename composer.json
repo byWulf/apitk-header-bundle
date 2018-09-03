@@ -1,6 +1,7 @@
 {
   "name": "check24/apitk-header-bundle",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "license": "MIT",
   "type": "symfony-bundle",
   "description": "This bundle provides helpful api helpers for RESTful API's",
   "authors": [
