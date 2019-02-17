@@ -6,7 +6,7 @@ This bundle provides useful features for a symfony based RESTful API.
 ## Installation
 Install the package via composer:
 ```
-composer install check24/apitk-header-bundle
+composer require check24/apitk-header-bundle
 ```
 
 ## Usage
