@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Shopping\ApiTKHeaderBundle\Service;
 
 /**
- * Class HeaderInformation
+ * Class HeaderInformation.
  *
  * @package Shopping\ApiTKHeaderBundle\Service
  */
@@ -19,7 +20,7 @@ class HeaderInformation
      * Register a value, which will be written in the response headers (key will be prefixed with 'x-api-').
      *
      * @param string $key
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function add(string $key, $value): void
     {
