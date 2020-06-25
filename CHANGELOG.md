@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2020-06-25
+### Removed
+* unused dependency on doctrine/orm
+
 ## [2.0.0] - 2020-03-20
 ### Added
 * Support for Symfony 5.0
