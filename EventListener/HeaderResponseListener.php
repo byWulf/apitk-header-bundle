@@ -14,16 +14,8 @@ use Symfony\Component\HttpKernel\Event\ResponseEvent;
  */
 class HeaderResponseListener
 {
-    /**
-     * @var HeaderInformation
-     */
-    private $headerInformation;
+    private HeaderInformation $headerInformation;
 
-    /**
-     * PaginationResponseListener constructor.
-     *
-     * @param HeaderInformation $headerInformation
-     */
     public function __construct(HeaderInformation $headerInformation)
     {
         $this->headerInformation = $headerInformation;
