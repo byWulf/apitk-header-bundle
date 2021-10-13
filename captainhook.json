@@ -3,16 +3,7 @@
         "enabled": true,
         "actions": [
             {
-                "action": "php ./vendor/bin/php-cs-fixer fix --verbose --dry-run",
-                "options": []
-            },
-            {
-                "action": "php ./vendor/bin/phpstan analyse -c phpstan.neon .",
-                "options": []
-            },
-            {
-                "action": "php ./vendor/bin/phpmd ./ text ruleset.xml --exclude vendor",
-                "options": []
+                "action": "composer test"
             }
         ]
     }

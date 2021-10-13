@@ -14,7 +14,7 @@ class HeaderInformation
     /**
      * @var string[]
      */
-    private $headerInformation = [];
+    private array $headerInformation = [];
 
     /**
      * Register a value, which will be written in the response headers (key will be prefixed with 'x-api-').
