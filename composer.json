@@ -1,6 +1,6 @@
 {
   "name": "check24/apitk-header-bundle",
-  "version": "2.2.0",
+  "version": "3.1.0",
   "license": "MIT",
   "type": "symfony-bundle",
   "description": "This bundle provides helpful api helpers for RESTful API's",
@@ -26,7 +26,7 @@
     "symfony/framework-bundle": ">= 5.3 <6.0",
     "doctrine/annotations": "^1.6",
     "nelmio/api-doc-bundle": "^3.2",
-    "sensio/framework-extra-bundle": "^5.1"
+    "sensio/framework-extra-bundle": "^5.1 || ^6.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
