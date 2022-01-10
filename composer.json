@@ -1,6 +1,5 @@
 {
   "name": "check24/apitk-header-bundle",
-  "version": "3.1.0",
   "license": "MIT",
   "type": "symfony-bundle",
   "description": "This bundle provides helpful api helpers for RESTful API's",
@@ -12,35 +11,32 @@
   ],
   "autoload": {
     "psr-4": {
-      "Shopping\\ApiTKHeaderBundle\\": ""
-    },
-    "exclude-from-classmap": [
-      "Tests/"
-    ]
+      "Shopping\\ApiTKHeaderBundle\\": "src/"
+    }
   },
   "require": {
-    "php": "^7.4 || ^8.0",
-    "symfony/config": ">= 5.3 <6.0",
-    "symfony/dependency-injection": ">= 5.3 <6.0",
-    "symfony/http-kernel": ">= 5.3 <6.0",
-    "symfony/framework-bundle": ">= 5.3 <6.0",
-    "doctrine/annotations": "^1.6",
+    "php": "^8.0",
+    "symfony/config": "^5.3 || ^6.0",
+    "symfony/dependency-injection": "^5.3 || ^6.0",
+    "symfony/http-kernel": "^5.3 || ^6.0",
+    "symfony/framework-bundle": "^5.3 || ^6.0",
+    "doctrine/annotations": "^1.13",
     "nelmio/api-doc-bundle": "^3.2",
     "sensio/framework-extra-bundle": "^5.1 || ^6.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "captainhook/captainhook": "^5.0",
-    "captainhook/plugin-composer": "^5.1",
-    "friendsofphp/php-cs-fixer": "^3.0",
-    "phpmd/phpmd": "^2.6",
-    "phpstan/phpstan": "^0.12",
-    "phpstan/phpstan-deprecation-rules": "^0.12.6"
+    "captainhook/captainhook": "^5.10",
+    "captainhook/plugin-composer": "^5.3",
+    "friendsofphp/php-cs-fixer": "^v3.4",
+    "phpmd/phpmd": "^2.11",
+    "phpstan/phpstan": "^1.3",
+    "phpstan/phpstan-deprecation-rules": "^1.0"
   },
   "scripts": {
     "test:php-cs-fixer": "@php vendor/bin/php-cs-fixer fix --verbose --dry-run",
-    "test:phpstan": "@php vendor/bin/phpstan analyse -c phpstan.neon .",
-    "test:phpmd": "@php vendor/bin/phpmd ./ text ruleset.xml --exclude vendor",
+    "test:phpstan": "@php vendor/bin/phpstan analyse -c phpstan.neon src",
+    "test:phpmd": "@php vendor/bin/phpmd ./src text ruleset.xml",
     "test": [
       "@test:php-cs-fixer",
       "@test:phpstan",

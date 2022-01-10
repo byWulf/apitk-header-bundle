@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace Shopping\ApiTKHeaderBundle\Service;
 
-/**
- * Class HeaderInformation.
- *
- * @package Shopping\ApiTKHeaderBundle\Service
- */
 class HeaderInformation
 {
     /**
@@ -18,11 +13,8 @@ class HeaderInformation
 
     /**
      * Register a value, which will be written in the response headers (key will be prefixed with 'x-api-').
-     *
-     * @param string $key
-     * @param mixed  $value
      */
-    public function add(string $key, $value): void
+    public function add(string $key, mixed $value): void
     {
         $this->headerInformation[$key] = $value;
     }
