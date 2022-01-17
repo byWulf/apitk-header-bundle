@@ -1,50 +1,51 @@
 {
   "name": "check24/apitk-header-bundle",
+  "description": "This bundle provides helpful api helpers for RESTful API's",
   "license": "MIT",
   "type": "symfony-bundle",
-  "description": "This bundle provides helpful api helpers for RESTful API's",
   "authors": [
     {
       "name": "Michael Wolf",
       "email": "wulf1337@gmail.com"
     }
   ],
-  "autoload": {
-    "psr-4": {
-      "Shopping\\ApiTKHeaderBundle\\": "src/"
-    }
-  },
   "require": {
     "php": "^8.0",
     "symfony/config": "^5.3 || ^6.0",
     "symfony/dependency-injection": "^5.3 || ^6.0",
-    "symfony/http-kernel": "^5.3 || ^6.0",
-    "symfony/framework-bundle": "^5.3 || ^6.0",
-    "doctrine/annotations": "^1.13",
-    "nelmio/api-doc-bundle": "^3.2",
-    "sensio/framework-extra-bundle": "^5.1 || ^6.0"
+    "symfony/http-kernel": "^5.3 || ^6.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest",
     "captainhook/captainhook": "^5.10",
     "captainhook/plugin-composer": "^5.3",
     "friendsofphp/php-cs-fixer": "^v3.4",
     "phpmd/phpmd": "^2.11",
     "phpstan/phpstan": "^1.3",
-    "phpstan/phpstan-deprecation-rules": "^1.0"
+    "phpstan/phpstan-deprecation-rules": "^1.0",
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Shopping\\ApiTKHeaderBundle\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "captainhook/plugin-composer": true
+    }
   },
   "scripts": {
-    "test:php-cs-fixer": "@php vendor/bin/php-cs-fixer fix --verbose --dry-run",
-    "test:phpstan": "@php vendor/bin/phpstan analyse -c phpstan.neon src",
-    "test:phpmd": "@php vendor/bin/phpmd ./src text ruleset.xml",
+    "fix": [
+      "@fix:php-cs-fixer"
+    ],
+    "fix:php-cs-fixer": "@php vendor/bin/php-cs-fixer fix --verbose",
     "test": [
       "@test:php-cs-fixer",
       "@test:phpstan",
       "@test:phpmd"
     ],
-    "fix:php-cs-fixer": "@php vendor/bin/php-cs-fixer fix --verbose",
-    "fix": [
-      "@fix:php-cs-fixer"
-    ]
+    "test:php-cs-fixer": "@php vendor/bin/php-cs-fixer fix --verbose --dry-run",
+    "test:phpmd": "@php vendor/bin/phpmd ./src text ruleset.xml",
+    "test:phpstan": "@php vendor/bin/phpstan analyse -c phpstan.neon src"
   }
 }
