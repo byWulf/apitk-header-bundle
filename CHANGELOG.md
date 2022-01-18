@@ -13,8 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for Symfony 6.0
 
 ### Changed
-- Use php8 syntax in project
-- Update github actions to run most possible symfony+php combinations
+- Use PHP 8 syntax in project
+- Update GitHub Actions to run most possible Symfony + PHP combinations
 
 ### Removed
 - Support for PHP 7.4
