@@ -7,14 +7,14 @@ namespace Shopping\ApiTKHeaderBundle\Service;
 class HeaderInformation
 {
     /**
-     * @var string[]
+     * @var array<string, string>
      */
     private array $headerInformation = [];
 
     /**
      * Register a value, which will be written in the response headers (key will be prefixed with 'x-api-').
      */
-    public function add(string $key, mixed $value): void
+    public function add(string $key, string $value): void
     {
         $this->headerInformation[$key] = $value;
     }
@@ -22,7 +22,7 @@ class HeaderInformation
     /**
      * Returns all currently registered header information for the response.
      *
-     * @return mixed[]
+     * @return array<string, string>
      */
     public function getAll(): array
     {
