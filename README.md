@@ -24,7 +24,7 @@ public function index(HeaderInformation $headerInformation): array
 {
     $users = $this->getUsers();
 
-    $headerInformation->add('users-count', count($users));
+    $headerInformation->add('users-count', (string) count($users));
 
     return $users;
 }
